@@ -16,6 +16,9 @@ export function Login() {
   function handleSignIn(e) {
     e.preventDefault();
     signInWithEmailAndPassword(email, password);
+
+    // Redirecionamento para o Power BI
+    window.location.href = "https://app.powerbi.com/view?r=eyJrIjoiNDM5YThlOWUtYTExMy00M2ZiLTkzZjctMGE1MmU5MGRmNmNhIiwidCI6ImYwMjYzMWYyLTExY2EtNDI3NC1iZmY2LTJmMGM5MzYyYTJiYiJ9";
   }
 
   if (loading) {
