@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import arrowImg from "../../assets/arrow.svg";
 import logoImg from "../../assets/logo.svg";
 import { auth } from "../../services/firebaseConfig";
@@ -13,14 +13,21 @@ export function Register() {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
-  function handleSignOut(e) {
+  async function handleSignUp(e) {
     e.preventDefault();
-    createUserWithEmailAndPassword(email, password);
+    try {
+      await createUserWithEmailAndPassword(email, password);
+      // Redirecionamento após o registro bem-sucedido
+      history.push("/login");
+    } catch (error) {
+      console.error("Erro ao registrar usuário:", error);
+    }
   }
 
   if (loading) {
     return <p>carregando...</p>;
   }
+
   return (
     <div className="container">
       <header className="header">
@@ -28,7 +35,7 @@ export function Register() {
         <span>Por favor digite suas informações de cadastro</span>
       </header>
 
-      <form>
+      <form onSubmit={handleSignUp}>
         <div className="inputContainer">
           <label htmlFor="email">E-mail</label>
           <input
@@ -51,7 +58,12 @@ export function Register() {
           />
         </div>
 
-        <button onClick={handleSignOut} className="button">
+        {error && (
+        <div className="custom-error-message2">
+          Ocorreu um erro ao fazer ao registrar. Por favor, tente novamente mais tarde.
+        </div>
+        )}
+        <button type="submit" className="button">
           Cadastrar <img src={arrowImg} alt="->" />
         </button>
         <div className="footer">

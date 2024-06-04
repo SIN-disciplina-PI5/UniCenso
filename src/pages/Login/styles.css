@@ -106,3 +106,8 @@
   color: #5C73DB;
 }
 
+.custom-error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}

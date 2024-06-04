@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #e40e0e;
+  background-color: #690013;
 }
 .container .header {
   display: flex;
@@ -110,3 +110,8 @@
   color: #fff;
 }
 
+.custom-error-message2 {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
