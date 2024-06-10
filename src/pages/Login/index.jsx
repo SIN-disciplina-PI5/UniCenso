@@ -25,7 +25,7 @@ export function Login() {
   
   if (user) {
     // Redirecionamento para o Power BI
-    window.location.href = "https://app.powerbi.com/view?r=eyJrIjoiNDM5YThlOWUtYTExMy00M2ZiLTkzZjctMGE1MmU5MGRmNmNhIiwidCI6ImYwMjYzMWYyLTExY2EtNDI3NC1iZmY2LTJmMGM5MzYyYTJiYiJ9";
+    window.location.href = "https://app.powerbi.com/view?r=eyJrIjoiN2YyOGJjMDEtMGE0MS00MDk2LTk0YTYtMzVmZDI5NTcwM2I4IiwidCI6ImYwMjYzMWYyLTExY2EtNDI3NC1iZmY2LTJmMGM5MzYyYTJiYiJ9";
   }
 
   return (
